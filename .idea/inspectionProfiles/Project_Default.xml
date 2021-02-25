@@ -1,0 +1,70 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="six" />
+            <item index="1" class="java.lang.String" itemvalue="urllib3" />
+            <item index="2" class="java.lang.String" itemvalue="idna" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E305" />
+          <option value="E225" />
+          <option value="E265" />
+          <option value="E402" />
+          <option value="E116" />
+          <option value="E501" />
+          <option value="E304" />
+          <option value="E201" />
+          <option value="E202" />
+          <option value="E303" />
+          <option value="E302" />
+          <option value="W605" />
+          <option value="E203" />
+          <option value="W292" />
+          <option value="E111" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStatementEffectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="views.movie_home.*" />
+          <option value="views.movie_detail.*" />
+          <option value="views.movie_proyecto.home" />
+          <option value="views.movie_proyecto.movie_modelo" />
+          <option value="movie.views.movie_proyecto.views" />
+          <option value="movie.movie_proyecto.*" />
+          <option value="movie.views.movie_modelo.*" />
+          <option value="movie_data" />
+          <option value="peewee.SqliteDatabase.create_table" />
+          <option value="movie.views.movie_data.movie_modelo" />
+          <option value="movie.views.movie_detail.views" />
+          <option value="movie.views.movie_data.*" />
+          <option value="movie.models.movie_modelo.Model" />
+          <option value="movie.movie_data.*" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

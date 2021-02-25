@@ -24,14 +24,14 @@ externalgraph_rowstyling = {
     'margin-left': '15px',
     'margin-right': '15px'
 }
-
+#Cols inside
 externalgraph_colstyling = {
     'border-radius': '10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': corporate_colors['dark-grey'],
-    'background-color': corporate_colors['dark-grey'],
-    'box-shadow': '0px 0px 17px 0px rgba(186, 218, 212, .5)',
+    'border-color': corporate_colors['white'],
+    'background-color': corporate_colors['white'],
+    #'box-shadow': '0px 0px 17px 0px rgba(251, 251, 252)',
     'padding-top': '10px'
 }
 
@@ -39,29 +39,29 @@ filterdiv_borderstyling = {
     'border-radius': '0px 0px 10px 10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': corporate_colors['blue-green'],
-    'background-color': corporate_colors['blue-green'],
-    'box-shadow': '2px 5px 5px 1px rgba(255, 101, 131, .5)'
+    'border-color': corporate_colors['white'],
+    'background-color': corporate_colors['white']
+    #'box-shadow': '2px 5px 5px 1px rgba(255, 101, 131, .5)'
 }
 
 navbarcurrentpage = {
     'text-decoration': 'underline',
-    'text-decoration-color': corporate_colors['pink-red'],
-    'text-shadow': '0px 0px 1px rgb(251, 251, 252)'
+    'text-decoration-color': corporate_colors['orange']
+    #'text-shadow': '0px 0px 1px rgb(251, 251, 252)'
 }
 
 recapdiv = {
     'border-radius': '10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': 'rgb(251, 251, 252, 0.1)',
+    #'border-color': 'rgb(251, 251, 252, 0.1)',
     'margin-left': '15px',
     'margin-right': '15px',
     'margin-top': '15px',
     'margin-bottom': '15px',
     'padding-top': '5px',
-    'padding-bottom': '5px',
-    'background-color': 'rgb(251, 251, 252, 0.1)'
+    'padding-bottom': '5px'
+    #'background-color': 'rgb(251, 251, 252, 0.1)'
 }
 
 recapdiv_text = {
@@ -133,20 +133,21 @@ corporate_layout = go.Layout(
     margin = corporate_margins
 )
 
-"""
-Data Mapping from data 00_raw
-"""
+################################################
+##Data Mapping from data 00_raw
+################################################
 
 sales_filepath = 'data/00_raw/airbnb_cleaning_data.csv'
 
 sales_fields = {
     'reporting_group_l1': 'room_and_property_type',
     'reporting_group_l2': 'name',
-    'sales': 'Sales Units',
-    'revenues': 'Revenues',
-    'sales target': 'Sales Targets',
-    'rev target': 'Rev Targets',
-    'num clients': 'nClients',
+    'price_rate': 'price_rate',
+    # 'sales': 'Sales Units',
+    # 'revenues': 'Revenues',
+    # 'sales target': 'Sales Targets',
+    # 'rev target': 'Rev Targets',
+    # 'num clients': 'nClients',
     'latitude': 'latitude',
     'longitude': 'longitude',
     'room_type': 'room_type',
@@ -199,16 +200,16 @@ def get_header():
             html.H1(children='Airbnb in Cartagena',
                     style={'textAlign': 'center'}
                     )],
-            className='col-8',
-            style={'padding-top': '1%'}
+                className='col-8',
+                style={'padding-top': '1%',
+                       'color': corporate_colors['pink-red']}
         ),
 
         html.Div([
-            html.Img(
-                src=app.get_asset_url('airbnblogo.png'),
-                # href = 'https://www.airbnb.com/cartagena',
-                height='43 px',
-                width='auto')
+            html.A([html.Img(
+                src = app.get_asset_url('airbnblogo.png'),
+                height = '50 px',
+                width = 'auto')], href = 'https://www.airbnb.com/cartagena-colombia/stays')
         ],
             className='col-2',
             style={
@@ -219,7 +220,8 @@ def get_header():
     ],
         className='row',
         style={'height': '4%',
-               'background-color': corporate_colors['light-grey']}
+               'background-color': corporate_colors['white'],
+               'color': corporate_colors['pink-red']}
     )
 
     return header
@@ -403,7 +405,7 @@ airbnb = html.Div([
                                          value=[''],
                                          multi=True,
                                          placeholder="Select Room Type (leave blank to include all)",
-                                         style={'font-size': '13px', 'color': corporate_colors['light-grey'],
+                                         style={'font-size': '13px', 'color': corporate_colors['dark-grey'],
                                                 'white-space': 'nowrap', 'text-overflow': 'ellipsis'}
                                          )
                         ],
@@ -415,7 +417,7 @@ airbnb = html.Div([
                                          value=[''],
                                          multi=True,
                                          placeholder="Select apartment name (leave blank to include all)",
-                                         style={'font-size': '13px', 'color': corporate_colors['light-grey'],
+                                         style={'font-size': '13px', 'color': corporate_colors['dark-grey'],
                                                 'white-space': 'nowrap', 'text-overflow': 'ellipsis'}
                                          )
                         ],
@@ -457,7 +459,7 @@ airbnb = html.Div([
 
         html.Div([  # External 10-column important one
 
-            html.H2(children="Airbnb Performances",
+            html.H2(children="Performances",
                     style={'color': corporate_colors['pink-red']}),
 
             html.Div([  # Internal row
@@ -491,7 +493,7 @@ airbnb = html.Div([
                 # Chart Column
                 html.Div([
                     dcc.Graph(
-                        id='sales-count-country')
+                        id='price_rate')
                 ],
                     className='col-4'),
 
@@ -513,7 +515,7 @@ airbnb = html.Div([
                 className='row')  # Internal row
 
         ],
-            className='col-10',
+            #className='col-10', #Right panel
             style=externalgraph_colstyling),  # External 10-column
 
         html.Div([
@@ -521,8 +523,8 @@ airbnb = html.Div([
             className='col-1'),  # Blank 1 column
 
     ],
-        className='row',
-        style=externalgraph_rowstyling
+        #className='row', #Left Panel
+        #style=externalgraph_rowstyling
     ),  # External row
 
 ])

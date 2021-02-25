@@ -112,7 +112,7 @@ img {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: "Dosis" !important;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -121,7 +121,20 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: central;
   text-align: center;
   font-weight: 350;
-  color: rgb(251, 251, 252);
+  color: rgb(255, 90, 95);
+  }
+
+
+h2, h3, h4, h5, h6 {
+  font-family: "Dosis" !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: central;
+  text-align: center;
+  font-weight: 350;
+  color: rgb(255, 255, 255);
   }
 
 p {

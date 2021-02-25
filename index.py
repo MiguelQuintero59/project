@@ -7,6 +7,7 @@ from app import server
 from layouts import airbnb, page2, page3
 import callbacks
 
+app.title = 'Project Lv.4'
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
@@ -25,4 +26,4 @@ def display_page(pathname):
         return airbnb # This is the "home page"
 
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8052)
+    app.run_server(debug=False, port=8060)
