@@ -420,7 +420,7 @@ def star_rating(reporting_l1_dropdown,reporting_l2_dropdown):
 
     data = go.Scatter(x = scatter_df[sales_fields["review_score"]],y = scatter_df[sales_fields["star_rating"]],
                       mode = 'markers',
-                      marker_size = scatter_df[sales_fields["price_rate"]].unique(),
+                      # marker_size = scatter_df[sales_fields["review_score"]].count(),
                       line = {'color' : corporate_colors['blue-green'], 'width' : 0.5})
                       # hovertemplate = hovertemplate_xy)
 
